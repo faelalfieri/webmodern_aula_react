@@ -1,9 +1,7 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-
 import { hasToken } from '../../services/auth.service'
 import MyInput from '../../components/MyInput'
-
 import './index.scss'
 import { userService } from '../../services/user.service'
 import { User } from '../../models/user'
@@ -31,9 +29,7 @@ export default function EditUserPage() {
         })
     }, [])
 
-    function goBack() {
-        navigate(-1)
-    }
+    function goBack() {navigate(-1)}
 
     function save() {
         if (name === null || name.trim() === '') {

@@ -1,15 +1,19 @@
 import './index.scss'
 
 type Props = {
+
     id: string,
     label: string,
     value?: string,
     type?: React.HTMLInputTypeAttribute,
     change?: (value: string) => void
+
 }
 
 export default function MyInput(props: Props) {
+
     return (
+
         <div className="my-input">
             <label htmlFor={props.id}>{props.label}:</label>
             <input
@@ -20,5 +24,7 @@ export default function MyInput(props: Props) {
                 type={props.type === undefined ? "text" : props.type}
             />
         </div>
+        
     )
+
 }

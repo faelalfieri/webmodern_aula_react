@@ -1,18 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import { removeLoggedUser } from '../../services/auth.service'
 import { userService } from '../../services/user.service'
-
 import HeaderButton from '../../components/HeaderButton'
 import { User } from '../../models/user'
-
 import './styles.scss'
 
 export default function HomePage() {
 
     const navigate = useNavigate()
-
     const [users, setUsers] = React.useState<User[]>([])
 
     function logOut() {
@@ -33,9 +29,7 @@ export default function HomePage() {
         fetchUsers()
     }, [])
 
-    function update(id: number) {
-        navigate(`/user/${id}/edit`)
-    }
+    function update(id: number) { navigate(`/user/${id}/edit`)}
 
     function remove(id: number) {
         userService.delete(id).then(isDeleted => {
@@ -44,9 +38,7 @@ export default function HomePage() {
         })
     }
 
-    function goToCreateUser() {
-        navigate('/user/create')
-    }
+    function goToCreateUser() {navigate('/user/create')}
 
     return (
         <div className='page-home'>
@@ -57,7 +49,6 @@ export default function HomePage() {
 
                 <HeaderButton text="Novo" click={goToCreateUser} />
             </header>
-
             <main>
                 { users.map(user => (
                     <div key={user.username} className='list-item'>
@@ -70,7 +61,6 @@ export default function HomePage() {
                     </div>
                 ))}
             </main>
-
         </div>
     )
 }
