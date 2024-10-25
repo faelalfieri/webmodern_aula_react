@@ -1,0 +1,23 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+main {
+    padding: 20px;
+}
